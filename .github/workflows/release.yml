@@ -4,25 +4,36 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing version tag to release, e.g. v0.1.0'
+        required: true
 
 permissions:
   contents: write
+
+env:
+  TAG: ${{ inputs.tag || github.ref_name }}
 
 jobs:
   release:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4.2.2
+        with:
+          ref: refs/tags/${{ env.TAG }}
       - uses: actions/setup-dotnet@v4.3.1
         with:
           dotnet-version: 10.x
       - name: Publish
-        run: dotnet publish src/HoodKeys.Cli -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -o publish
+        shell: pwsh
+        run: dotnet publish src/HoodKeys.Cli -c Release -r win-x64 --self-contained -p:PublishSingleFile=true "-p:Version=$($env:TAG.TrimStart('v'))" -o publish
       - name: Package
         shell: pwsh
         run: |
-          Compress-Archive -DestinationPath hoodkeys-${{ github.ref_name }}-win-x64.zip -Path publish/hoodkeys.exe, samples/mywhoosh.json, LICENSE
+          Compress-Archive -DestinationPath "hoodkeys-$env:TAG-win-x64.zip" -Path publish/hoodkeys.exe, samples/mywhoosh.json, LICENSE
       - name: Create release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${{ github.ref_name }}" "hoodkeys-${{ github.ref_name }}-win-x64.zip" --title "${{ github.ref_name }}" --generate-notes
+        run: gh release create "${{ env.TAG }}" "hoodkeys-${{ env.TAG }}-win-x64.zip" --verify-tag --title "${{ env.TAG }}" --generate-notes

@@ -7,6 +7,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <LangVersion>latest</LangVersion>
+    <!-- The release workflow overrides this with the tag's version (-p:Version). -->
+    <Version>0.1.0</Version>
     <Authors>Janek</Authors>
     <Copyright>Copyright (c) 2026 Janek</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
