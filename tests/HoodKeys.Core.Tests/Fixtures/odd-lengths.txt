@@ -1,0 +1,12 @@
+# Empty, counter-only, short and long payloads decode the channels present and never throw.
+=>
+20 =>
+21 F0 =>
+22 F0 F0 F0 =>
+23 11 F0 F0 F0 => 1:ShortPress
+24 12 => 1:ShortPress
+25 12 21 => 2:LongPress
+26 13 21 F0 => 1:ShortPress
+27 13 21 F0 F0 10 20 30 =>
+28 13 21 F0 11 10 20 30 => 4:ShortPress
+29 13 21 F0 12 AA BB => 4:ShortPress

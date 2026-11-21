@@ -1,0 +1,10 @@
+# A double tap is two ShortPress events on each channel.
+20 F0 F0 F0 F0 =>
+21 11 F0 F0 F0 => 1:ShortPress
+22 12 F0 F0 F0 => 1:ShortPress
+23 12 11 F0 F0 => 2:ShortPress
+24 12 12 F0 F0 => 2:ShortPress
+25 12 12 11 F0 => 3:ShortPress
+26 12 12 12 F0 => 3:ShortPress
+27 12 12 12 11 => 4:ShortPress
+28 12 12 12 12 => 4:ShortPress

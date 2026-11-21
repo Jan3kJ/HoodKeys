@@ -1,0 +1,4 @@
+# Fresh link, nothing pressed; the first report seeds and repeated idle reports give no events.
+20 F0 F0 F0 F0 =>
+21 F0 F0 F0 F0 =>
+22 F0 F0 F0 F0 =>

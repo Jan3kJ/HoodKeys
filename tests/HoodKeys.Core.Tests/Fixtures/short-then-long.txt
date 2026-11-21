@@ -1,0 +1,14 @@
+# A short press followed by a long press with release, on each channel.
+20 F0 F0 F0 F0 =>
+21 11 F0 F0 F0 => 1:ShortPress
+22 22 F0 F0 F0 => 1:LongPress
+23 03 F0 F0 F0 => 1:Release
+24 03 11 F0 F0 => 2:ShortPress
+25 03 22 F0 F0 => 2:LongPress
+26 03 03 F0 F0 => 2:Release
+27 03 03 11 F0 => 3:ShortPress
+28 03 03 22 F0 => 3:LongPress
+29 03 03 03 F0 => 3:Release
+2A 03 03 03 11 => 4:ShortPress
+2B 03 03 03 22 => 4:LongPress
+2C 03 03 03 03 => 4:Release

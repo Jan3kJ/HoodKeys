@@ -1,0 +1,9 @@
+# The report counter wraps 2F to 20 and may skip values; it never produces or hides an event.
+2D F0 F0 F0 F0 =>
+2E 11 F0 F0 F0 => 1:ShortPress
+2F 12 F0 F0 F0 => 1:ShortPress
+20 13 F0 F0 F0 => 1:ShortPress
+21 13 F0 F0 F0 =>
+24 14 F0 F0 F0 => 1:ShortPress
+2B 15 F0 F0 F0 => 1:ShortPress
+20 15 F0 F0 F0 =>

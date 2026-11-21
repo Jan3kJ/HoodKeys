@@ -1,0 +1,12 @@
+# The examples in the spec, one channel each: short x3, long then release, long held about 2 s.
+20 F0 F0 F0 F0 =>
+21 11 F0 F0 F0 => 1:ShortPress
+22 12 F0 F0 F0 => 1:ShortPress
+23 13 F0 F0 F0 => 1:ShortPress
+24 13 24 F0 F0 => 2:LongPress
+25 13 35 F0 F0 => 2:LongHold
+26 13 06 F0 F0 => 2:Release
+27 13 06 27 F0 => 3:LongPress
+28 13 06 38 F0 => 3:LongHold
+29 13 06 39 F0 => 3:LongHold
+2A 13 06 0A F0 => 3:Release

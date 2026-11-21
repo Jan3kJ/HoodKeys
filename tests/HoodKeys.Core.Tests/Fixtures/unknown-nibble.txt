@@ -1,0 +1,9 @@
+# A change to a high nibble 5 to E, or F other than F0, is not an event, but updates the channel state.
+20 F0 F0 F0 F0 =>
+21 51 F0 F0 F0 =>
+22 51 E3 F0 F0 =>
+23 51 E3 F1 F0 =>
+24 52 E3 F1 F0 =>
+25 11 E3 F1 F0 => 1:ShortPress
+26 11 F0 F1 F0 =>
+27 11 F0 F1 21 => 4:LongPress

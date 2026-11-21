@@ -1,0 +1,9 @@
+# A repeated identical report gives no event, even right after a press.
+20 F0 F0 F0 F0 =>
+21 11 F0 F0 F0 => 1:ShortPress
+21 11 F0 F0 F0 =>
+22 11 F0 F0 F0 =>
+23 12 F0 F0 F0 => 1:ShortPress
+23 12 F0 F0 F0 =>
+24 12 24 F0 F0 => 2:LongPress
+24 12 24 F0 F0 =>

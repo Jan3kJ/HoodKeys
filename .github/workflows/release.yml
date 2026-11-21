@@ -1,0 +1,28 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-dotnet@v4.3.1
+        with:
+          dotnet-version: 10.x
+      - name: Publish
+        run: dotnet publish src/HoodKeys.Cli -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -o publish
+      - name: Package
+        shell: pwsh
+        run: |
+          Compress-Archive -DestinationPath hoodkeys-${{ github.ref_name }}-win-x64.zip -Path publish/hoodkeys.exe, samples/mywhoosh.json, LICENSE
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${{ github.ref_name }}" "hoodkeys-${{ github.ref_name }}-win-x64.zip" --title "${{ github.ref_name }}" --generate-notes

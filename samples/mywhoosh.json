@@ -1,0 +1,18 @@
+// HoodKeys config for MyWhoosh. Channels are the D-Fly channels you assigned in Shimano E-TUBE.
+{
+  // Optional: pick one Di2 unit by name or address. Leave out to use the first one found.
+  // "device": { "name": "RD-RX827" },
+
+  "channels": {
+    // Channel 1: shift up. Holding the button repeats the key.
+    "1": { "short": { "key": "I" }, "long": "repeat", "repeatIntervalMs": 150 },
+
+    // Channel 2: shift down. Holding the button repeats the key.
+    "2": { "short": { "key": "K" }, "long": "repeat", "repeatIntervalMs": 150 }
+
+    // Channels 3 and 4 are examples; remove the // to use them.
+    // A long press can be its own action, and an action can be a key combo or a PowerShell command.
+    // "3": { "short": { "key": "Ctrl+Shift+X" }, "long": { "command": "New-Item -ItemType File $env:TEMP\\hoodkeys.txt -Force" } },
+    // "4": { "short": { "key": "Space" } }
+  }
+}

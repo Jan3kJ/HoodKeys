@@ -1,0 +1,6 @@
+# A short press on each channel is one ShortPress, no release follows.
+20 F0 F0 F0 F0 =>
+21 11 F0 F0 F0 => 1:ShortPress
+22 11 11 F0 F0 => 2:ShortPress
+23 11 11 11 F0 => 3:ShortPress
+24 11 11 11 11 => 4:ShortPress

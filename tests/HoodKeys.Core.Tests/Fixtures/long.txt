@@ -1,0 +1,18 @@
+# A long press, its repeats and the release on each channel.
+20 F0 F0 F0 F0 =>
+21 21 F0 F0 F0 => 1:LongPress
+22 32 F0 F0 F0 => 1:LongHold
+23 33 F0 F0 F0 => 1:LongHold
+24 04 F0 F0 F0 => 1:Release
+25 04 21 F0 F0 => 2:LongPress
+26 04 32 F0 F0 => 2:LongHold
+27 04 33 F0 F0 => 2:LongHold
+28 04 04 F0 F0 => 2:Release
+29 04 04 21 F0 => 3:LongPress
+2A 04 04 32 F0 => 3:LongHold
+2B 04 04 33 F0 => 3:LongHold
+2C 04 04 04 F0 => 3:Release
+2D 04 04 04 21 => 4:LongPress
+2E 04 04 04 32 => 4:LongHold
+2F 04 04 04 33 => 4:LongHold
+20 04 04 04 04 => 4:Release
